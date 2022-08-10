@@ -1,0 +1,104 @@
+
+.search{
+    position: relative;
+    display: flex;
+    height: var(--search-height);
+    padding: 0 0 0 16px;
+    background: rgba(22, 24, 35, 0.06);
+    border-radius: var(--search-border-radius);
+    border: 1px solid rgba(22, 24, 35, 0);
+
+    input{
+        flex: 1;
+        font-size: 1.6rem;
+        height: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: var(--black);
+        caret-color: var(--primary);
+        padding-right: 27px;
+    }
+    
+    input:not(:placeholder-shown) ~ .search-btn{
+        color: rgba(22, 24, 35, 0.75);
+    }
+
+    &::after{
+        position: absolute;
+        width: 1px;
+        top: var(--search-top-spacer);
+        right: var(--search-width-icon-search);
+        height: calc(var(--search-height) - var(--search-top-spacer) * 2);
+        content: "";
+        display: block;
+        background-color: rgba(22, 24, 35, 0.12);
+    }
+
+    &:focus-within{
+        border-color: rgba(22, 24, 35, 0.2);
+        
+    }
+}
+
+.search-result{
+    padding-top: 8px;
+}
+
+.clear, .loading{
+    position: absolute;
+    right: calc(var(--search-width-icon-search) + 8px) ;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    outline:none;
+    background-color: transparent;
+    cursor: pointer;
+    color: rgba(22, 24, 35, 0.34);
+}
+.loading{
+    animation: spinner 1.6s linear infinite;
+
+}
+
+@keyframes spinner {
+    from {
+        transform:translateY(-50%) rotate(0);
+    }
+    to{
+        transform:translateY(-50%) rotate(360deg);
+    }
+}
+
+.search-btn{
+    width: var(--search-width-icon-search);
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
+    font-size: 1.8rem;
+    color: rgba(22, 24, 35, 0.34);
+
+    &:hover{
+        background:rgba(22, 24, 35, 0.03);
+        cursor: pointer;
+    }
+
+    &:active{
+        background:rgba(22, 24, 35, 0.06);
+    }
+
+}
+
+.search, .search-result{
+    width: 361px;
+}
+
+.search-title{
+    padding: 5px 12px;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: rgba(22, 24, 35, 0.5);
+}

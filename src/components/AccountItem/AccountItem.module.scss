@@ -1,0 +1,39 @@
+
+
+.wrapper{
+    display:flex;
+    align-items:center;
+    padding: 5px 16px;
+    cursor: pointer;
+
+    &:hover{
+        background-color: rgba(22,24,35,0.03);
+    }
+}
+
+.avata{
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+    object-fit: cover; // Giữ dúng tỉ lệ và tràn hình
+    margin-right: 12px;
+}
+
+.info{   
+    flex:1;
+}
+
+.name{
+    font-size:1.6rem;
+    font-weight: 700;
+}
+
+.check{
+    margin-left: 6px;
+    color: rgba(53, 182, 246,0.7);
+}
+
+.username{
+    font-size:1.4rem;
+    color: rgba(22,24,35,0.7);
+}
